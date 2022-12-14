@@ -1,6 +1,9 @@
+import React from 'react';
 import { addons } from '@storybook/addons';
 import { setup } from '@storybook/vue3';
+import { themes } from '@storybook/theming';
 import { light, dark } from './theme';
+import { DocsContainer } from '@storybook/blocks';
 import { Inkline, components } from '../src/inkline';
 import '../src/inkline.scss';
 import './preview.scss';
@@ -28,5 +31,8 @@ export const parameters = {
     stylePreview: true,
     dark,
     light,
+  },
+  docs: {
+    container: (props) => <DocsContainer {...props} theme={themes.dark} />,
   },
 };
